@@ -1,0 +1,16 @@
+{
+  "name": "p5website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "microbit-web-bluetooth": "^0.4.0",
+    "p5": "^0.9.0"
+  }
+}
