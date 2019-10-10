@@ -1,0 +1,24 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "p5js",
+        "p5js/dom"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly",
+        "microbit": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2018
+    },
+    "rules": {
+        "no-unused-vars": 0,
+        "no-undef": 0
+    }
+}

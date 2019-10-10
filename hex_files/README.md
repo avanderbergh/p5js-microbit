@@ -1,0 +1,1 @@
+Copy the hex file onto your micro:bit to use it with web Bluetooth.
