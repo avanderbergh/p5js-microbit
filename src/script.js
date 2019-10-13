@@ -4,8 +4,11 @@ var rotation = {
   y: 0,
   z: 0
 };
+var temp = 0;
 
-function preload() {}
+function preload() {
+  // This function is to load assets before setup function can run.
+}
 
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
@@ -13,7 +16,7 @@ function setup() {
 }
 
 function draw() {
-  background("#000000");
+  background("#fefefe");
 }
 
 async function connect() {
@@ -25,13 +28,36 @@ async function connect() {
     "accelerometerdatachanged",
     handleAccelerometerChanged
   );
+  services.temperatureService.addEventListener(
+    "temperaturechanged",
+    handleTemperatureChanged
+  );
+  services.buttonService.addEventListener(
+    "buttonastatechanged",
+    handleButtonAPressed
+  );
+  services.buttonService.addEventListener(
+    "buttonbstatechanged",
+    handleButtonBPressed
+  );
   document.getElementById("button-container").style.display = "none";
   console.log("services", services);
 }
 
 function handleAccelerometerChanged(e) {
   rotation = e.detail;
-  console.log(rotation);
+}
+
+function handleTemperatureChanged(e) {
+  temp = e.detail;
+}
+
+function handleButtonAPressed(e) {
+  console.log("Button A Pressed", e.detail);
+}
+
+function handleButtonBPressed(e) {
+  console.log("Button B Pressed", e.detail);
 }
 
 window.addEventListener("resize", () => {
